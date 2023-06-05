@@ -1,0 +1,6 @@
+C:\Users\Usuario\source\repos\Programacion1-Msaulo\Logica_Clases\Logica_Clases\bin\Debug\Logica_Clases.dll
+C:\Users\Usuario\source\repos\Programacion1-Msaulo\Logica_Clases\Logica_Clases\bin\Debug\Logica_Clases.pdb
+C:\Users\Usuario\source\repos\Programacion1-Msaulo\Logica_Clases\Logica_Clases\obj\Debug\Logica_Clases.csproj.AssemblyReference.cache
+C:\Users\Usuario\source\repos\Programacion1-Msaulo\Logica_Clases\Logica_Clases\obj\Debug\Logica_Clases.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\Programacion1-Msaulo\Logica_Clases\Logica_Clases\obj\Debug\Logica_Clases.dll
+C:\Users\Usuario\source\repos\Programacion1-Msaulo\Logica_Clases\Logica_Clases\obj\Debug\Logica_Clases.pdb
