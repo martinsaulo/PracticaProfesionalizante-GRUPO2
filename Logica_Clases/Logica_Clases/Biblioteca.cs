@@ -8,21 +8,13 @@ namespace Logica_Clases
 {
     public class Biblioteca
     {
-        public List<Receta> listaRecetas { get; set; } = new List<Receta>();
+        public static List<Receta> listaRecetas { get; set; } = new List<Receta>();
+        public static List<Etiqueta> listaEtiquetas { get; set; } = new List<Etiqueta>();
+        public static List<Ingrediente> listaIngredites { get; set; } = new List<Ingrediente>();
 
-        public void CrearReceta(string nombreReceta, string descripcionReceta, List<Etiqueta> listaEtiquetas,
-            List<Ingrediente> listaIngredientes) 
+        public void CrearReceta(Receta nuevaReceta) 
         {
-            Receta nuevaReceta = new Receta();
-            nuevaReceta.idReceta = listaRecetas.Count;
-            nuevaReceta.nombreReceta = nombreReceta;
-            nuevaReceta.descripcionReceta = descripcionReceta;
-            nuevaReceta.fechaCreacion = DateTime.Now;
-            nuevaReceta.ultimaModificacion = DateTime.Now;
-            nuevaReceta.listaIngredientes = listaIngredientes;
-            nuevaReceta.listaEtiquetas = listaEtiquetas;
-            nuevaReceta.caloriasTotales = nuevaReceta.CalcularCalorias();
-
+            nuevaReceta.idReceta = listaRecetas.Last().idReceta + 1;
             listaRecetas.Add(nuevaReceta);
         }
         public void EliminarReceta(int idRecetaEliminada) 
@@ -34,9 +26,15 @@ namespace Logica_Clases
             }
             
         }
-        public void ModificarReceta(int idRecetaModificada) 
+        public void ModificarReceta(int idRecetaModificada, Receta recetaModificada) 
         {
-            Receta recetaModificada = listaRecetas.Find(x => x.idReceta == idRecetaModificada);
+            Receta viejaReceta = listaRecetas.Find(x => x.idReceta == idRecetaModificada);
+            viejaReceta = recetaModificada;
+            viejaReceta.idReceta += idRecetaModificada;
+        }
+        public void AgregarEtiqueta(Etiqueta nuevaEtiqueta)
+        {
+
         }
         public void ImportarReceta(string rutaArchivo) { }
         public void ExportarReceta(string rutaArchivo, Receta recetaExportada) { }

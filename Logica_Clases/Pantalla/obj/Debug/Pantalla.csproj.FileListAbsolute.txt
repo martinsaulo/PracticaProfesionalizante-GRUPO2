@@ -1,0 +1,15 @@
+C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\Logica_Clases\Pantalla\bin\Debug\Pantalla.exe.config
+C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\Logica_Clases\Pantalla\bin\Debug\Pantalla.exe
+C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\Logica_Clases\Pantalla\bin\Debug\Pantalla.pdb
+C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\Logica_Clases\Pantalla\bin\Debug\Logica_Clases.dll
+C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\Logica_Clases\Pantalla\bin\Debug\Logica_Clases.pdb
+C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\Logica_Clases\Pantalla\obj\Debug\Pantalla.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\Logica_Clases\Pantalla\obj\Debug\Pantalla.csproj.SuggestedBindingRedirects.cache
+C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\Logica_Clases\Pantalla\obj\Debug\Pantalla.Properties.Resources.resources
+C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\Logica_Clases\Pantalla\obj\Debug\Pantalla.csproj.GenerateResource.cache
+C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\Logica_Clases\Pantalla\obj\Debug\Pantalla.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\Logica_Clases\Pantalla\obj\Debug\Pantalla.csproj.CopyComplete
+C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\Logica_Clases\Pantalla\obj\Debug\Pantalla.exe
+C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\Logica_Clases\Pantalla\obj\Debug\Pantalla.pdb
+C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\Logica_Clases\Pantalla\obj\Debug\Pantalla.Biblioteca_Recetas.resources
+C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\Logica_Clases\Pantalla\obj\Debug\Pantalla.etiqueta_nueva.resources

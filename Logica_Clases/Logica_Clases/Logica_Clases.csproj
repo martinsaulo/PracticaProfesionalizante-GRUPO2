@@ -44,7 +44,9 @@
     <Compile Include="Biblioteca.cs" />
     <Compile Include="Etiqueta.cs" />
     <Compile Include="Ingrediente.cs" />
-    <Compile Include="Paso.cs" />
+    <Compile Include="IngredienteGramo.cs" />
+    <Compile Include="IngredienteLitro.cs" />
+    <Compile Include="IngredienteUnidad.cs" />
     <Compile Include="Receta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Logica_Clases
 {
-    public class Ingrediente
+    public abstract class Ingrediente
     {
         public string nombreIngrediente { get; set; }
-        public int cantidadIngrediente { get; set; }
-        public int caloriasIngrediente { get; set; }
-        public string tipoUnidad { get; set; }
+        public int idIngrediente { get; set; }
+
+        public abstract int DevolverCalorias();
+        public abstract string DevolverCantidad();
     }
 }
