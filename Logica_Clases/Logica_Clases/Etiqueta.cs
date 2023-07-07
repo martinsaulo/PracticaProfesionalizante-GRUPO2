@@ -11,6 +11,5 @@ namespace Logica_Clases
     {
         public int idEtiqueta { get; set; }
         public string nombreEtiqueta { get; set; }
-        public string colorEtiqueta { get; set; }
     }
 }

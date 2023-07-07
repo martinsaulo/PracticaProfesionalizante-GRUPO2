@@ -9,10 +9,10 @@ namespace Logica_Clases
     public class IngredienteLitro : Ingrediente
     {
         public int mililitros { get; set; }
-        public int caloriasMililitro { get; set; }
+        public int caloriasPorMililitro { get; set; }
         public override int DevolverCalorias()
         {
-            return mililitros * caloriasMililitro;
+            return mililitros * caloriasPorMililitro;
         }
         public override string DevolverCantidad()
         {

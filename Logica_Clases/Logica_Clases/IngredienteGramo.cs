@@ -9,10 +9,10 @@ namespace Logica_Clases
     public class IngredienteGramo : Ingrediente
     {
         public int gramos { get; set; }
-        public int caloriasGramo { get; set; }
+        public int caloriasPorGramo { get; set; }
         public override int DevolverCalorias()
         {
-            return gramos * caloriasGramo;
+            return gramos * caloriasPorGramo;
         }
         public override string DevolverCantidad()
         {

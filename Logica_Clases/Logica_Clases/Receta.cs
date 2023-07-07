@@ -23,7 +23,7 @@ namespace Logica_Clases
             int calorias = 0;
             foreach(var x in listaIngredientes)
             {
-                calorias += x.caloriasIngrediente; // Ver
+                calorias += x.DevolverCalorias(); 
             }
             return 0;
         }

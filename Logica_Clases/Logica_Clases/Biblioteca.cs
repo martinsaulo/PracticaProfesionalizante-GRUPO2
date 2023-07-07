@@ -12,12 +12,12 @@ namespace Logica_Clases
         public static List<Etiqueta> listaEtiquetas { get; set; } = new List<Etiqueta>();
         public static List<Ingrediente> listaIngredites { get; set; } = new List<Ingrediente>();
 
-        public void CrearReceta(Receta nuevaReceta) 
+        public static void AgregarReceta(Receta nuevaReceta) 
         {
             nuevaReceta.idReceta = listaRecetas.Last().idReceta + 1;
             listaRecetas.Add(nuevaReceta);
         }
-        public void EliminarReceta(int idRecetaEliminada) 
+        public static void EliminarReceta(int idRecetaEliminada) 
         {
             Receta recetaEliminada = listaRecetas.Find(x => x.idReceta == idRecetaEliminada);
             if (recetaEliminada != null)
@@ -26,17 +26,35 @@ namespace Logica_Clases
             }
             
         }
-        public void ModificarReceta(int idRecetaModificada, Receta recetaModificada) 
+        public static void ModificarReceta(int idRecetaModificada, Receta recetaModificada) 
         {
             Receta viejaReceta = listaRecetas.Find(x => x.idReceta == idRecetaModificada);
             viejaReceta = recetaModificada;
-            viejaReceta.idReceta += idRecetaModificada;
+            viejaReceta.idReceta = idRecetaModificada;
         }
-        public void AgregarEtiqueta(Etiqueta nuevaEtiqueta)
+        public static void AgregarEtiqueta(Etiqueta nuevaEtiqueta)
         {
-
+            listaEtiquetas.Add(nuevaEtiqueta);
         }
-        public void ImportarReceta(string rutaArchivo) { }
-        public void ExportarReceta(string rutaArchivo, Receta recetaExportada) { }
+        public static void EliminarEtiqueta(Etiqueta EtiquetaEliminar)
+        {
+            listaEtiquetas.Remove(EtiquetaEliminar);
+        }
+        public static void AgregarIngrediente(Ingrediente nuevoIngrediente)
+        {
+            listaIngredites.Add(nuevoIngrediente);
+        }
+        public static void EliminarIngrediente(Ingrediente ingrienteEliminar)
+        {
+            listaIngredites.Remove(ingrienteEliminar);
+        }
+        public static void ModificarIngrediente(int idIngredienteViejo, Ingrediente ingredienteModificado) 
+        {
+            Ingrediente viejoIngrediente = listaIngredites.Find(x => x.idIngrediente == idIngredienteViejo);
+            viejoIngrediente = ingredienteModificado;
+            viejoIngrediente.idIngrediente = idIngredienteViejo;
+        }
+        public static void ImportarReceta(string rutaArchivo) { }
+        public static void ExportarReceta(string rutaArchivo, Receta recetaExportada) { }
     }
 }
