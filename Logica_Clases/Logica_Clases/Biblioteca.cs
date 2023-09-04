@@ -32,6 +32,7 @@ namespace Logica_Clases
             viejaReceta = recetaModificada;
             viejaReceta.idReceta = idRecetaModificada;
         }
+        //Arreglar
         public static void AgregarEtiqueta(Etiqueta nuevaEtiqueta)
         {
             listaEtiquetas.Add(nuevaEtiqueta);
