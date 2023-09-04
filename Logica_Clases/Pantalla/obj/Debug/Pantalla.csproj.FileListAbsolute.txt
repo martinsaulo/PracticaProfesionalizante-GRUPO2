@@ -4,7 +4,6 @@ C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\Logica_Clases\Pan
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\Logica_Clases\Pantalla\bin\Debug\Logica_Clases.dll
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\Logica_Clases\Pantalla\bin\Debug\Logica_Clases.pdb
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\Logica_Clases\Pantalla\obj\Debug\Pantalla.csproj.AssemblyReference.cache
-C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\Logica_Clases\Pantalla\obj\Debug\Pantalla.csproj.SuggestedBindingRedirects.cache
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\Logica_Clases\Pantalla\obj\Debug\Pantalla.Properties.Resources.resources
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\Logica_Clases\Pantalla\obj\Debug\Pantalla.csproj.GenerateResource.cache
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\Logica_Clases\Pantalla\obj\Debug\Pantalla.csproj.CoreCompileInputs.cache
