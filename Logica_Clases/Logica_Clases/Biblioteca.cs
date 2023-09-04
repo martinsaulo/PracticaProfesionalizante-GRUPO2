@@ -28,10 +28,13 @@ namespace Logica_Clases
         }
         public static void ModificarReceta(int idRecetaModificada, Receta recetaModificada) 
         {
-            Receta viejaReceta = listaRecetas.Find(x => x.idReceta == idRecetaModificada);
-            viejaReceta = recetaModificada;
-            viejaReceta.idReceta = idRecetaModificada;
+            int viejaRecetaIndex = listaRecetas.FindIndex(x => x.idReceta == idRecetaModificada);
+            recetaModificada.fechaCreacion = listaRecetas[viejaRecetaIndex].fechaCreacion;
+            listaRecetas[viejaRecetaIndex] = recetaModificada;
+            listaRecetas[viejaRecetaIndex].idReceta = idRecetaModificada;
+            listaRecetas[viejaRecetaIndex].ultimaModificacion = DateTime.Now;
         }
+        //Arreglar
         public static void AgregarEtiqueta(Etiqueta nuevaEtiqueta)
         {
             listaEtiquetas.Add(nuevaEtiqueta);
