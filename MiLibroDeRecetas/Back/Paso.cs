@@ -8,5 +8,8 @@ namespace Back
 {
     public class Paso
     {
+        public int Id { get; set; }
+        public int Descripcion { get; set; }
+        public int IdReceta { get; set; }
     }
 }

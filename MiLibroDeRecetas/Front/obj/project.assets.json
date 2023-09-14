@@ -3159,11 +3159,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\MiLibroDeRecetas\\Front\\Front.csproj",
+      "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\Main\\PracticaProfesionalizante-GRUPO2\\MiLibroDeRecetas\\Front\\Front.csproj",
       "projectName": "Front",
-      "projectPath": "C:\\Users\\Usuario\\source\\repos\\MiLibroDeRecetas\\Front\\Front.csproj",
+      "projectPath": "C:\\Users\\Usuario\\Desktop\\Main\\PracticaProfesionalizante-GRUPO2\\MiLibroDeRecetas\\Front\\Front.csproj",
       "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Usuario\\source\\repos\\MiLibroDeRecetas\\Front\\obj\\",
+      "outputPath": "C:\\Users\\Usuario\\Desktop\\Main\\PracticaProfesionalizante-GRUPO2\\MiLibroDeRecetas\\Front\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3184,8 +3184,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\Usuario\\source\\repos\\MiLibroDeRecetas\\Back\\Back.csproj": {
-              "projectPath": "C:\\Users\\Usuario\\source\\repos\\MiLibroDeRecetas\\Back\\Back.csproj"
+            "C:\\Users\\Usuario\\Desktop\\Main\\PracticaProfesionalizante-GRUPO2\\MiLibroDeRecetas\\Back\\Back.csproj": {
+              "projectPath": "C:\\Users\\Usuario\\Desktop\\Main\\PracticaProfesionalizante-GRUPO2\\MiLibroDeRecetas\\Back\\Back.csproj"
             }
           }
         }

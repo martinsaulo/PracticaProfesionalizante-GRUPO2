@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QVzvgMri7YVZTJ+th02J44XlsQZMxbTJqWr1SArtK4/e4YyWy8Iatpj6a3C8YYkJ9drqJWcf8rtyiwYUbs+VWQ==",
+  "dgSpecHash": "6BqmpTw1O+8UuFOYj22o8BLvnLDXDgQ5nd4BUuuRGSkvel39giyEyfSh+1R11B/9Nemri1INQJuqYs8Mg282EA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Usuario\\source\\repos\\MiLibroDeRecetas\\Front\\Front.csproj",
+  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\Main\\PracticaProfesionalizante-GRUPO2\\MiLibroDeRecetas\\Front\\Front.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuario\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\source\\repos\\MiLibroDeRecetas\\Back\\Back.csproj": {}
+    "C:\\Users\\Usuario\\Desktop\\Main\\PracticaProfesionalizante-GRUPO2\\MiLibroDeRecetas\\Back\\Back.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\source\\repos\\MiLibroDeRecetas\\Back\\Back.csproj": {
+    "C:\\Users\\Usuario\\Desktop\\Main\\PracticaProfesionalizante-GRUPO2\\MiLibroDeRecetas\\Back\\Back.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\MiLibroDeRecetas\\Back\\Back.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\Desktop\\Main\\PracticaProfesionalizante-GRUPO2\\MiLibroDeRecetas\\Back\\Back.csproj",
         "projectName": "Back",
-        "projectPath": "C:\\Users\\Usuario\\source\\repos\\MiLibroDeRecetas\\Back\\Back.csproj",
+        "projectPath": "C:\\Users\\Usuario\\Desktop\\Main\\PracticaProfesionalizante-GRUPO2\\MiLibroDeRecetas\\Back\\Back.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\source\\repos\\MiLibroDeRecetas\\Back\\obj\\",
+        "outputPath": "C:\\Users\\Usuario\\Desktop\\Main\\PracticaProfesionalizante-GRUPO2\\MiLibroDeRecetas\\Back\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

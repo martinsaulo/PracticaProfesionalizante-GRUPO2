@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "keVGpn4O6uFJxnH9j7t3rQfIWrGhagk4qeq60+l2KRGpox83Cx3Ws5/R91m0SPHQsveR5o/Ell4++b6QmaEwzw==",
+  "dgSpecHash": "pBc0ScOU8jGrlBfKH2PXOGaDH/Et4k7jG5el1BYnNHSKylxQ0GJ4SyUm11IddW5nG33cmurnt8dVW/h8mqn3Fw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Usuario\\source\\repos\\MiLibroDeRecetas\\Back\\Back.csproj",
+  "projectFilePath": "C:\\Users\\Usuario\\Desktop\\Main\\PracticaProfesionalizante-GRUPO2\\MiLibroDeRecetas\\Back\\Back.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuario\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

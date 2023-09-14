@@ -8,5 +8,7 @@ namespace Back
 {
     public class Etiqueta
     {
+        public int Id { get; set; }
+        public int Nombre { get; set; }
     }
 }
