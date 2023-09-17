@@ -9,7 +9,8 @@ namespace Back
     public class Usuario
     {
         public int Id { get; set; }
-        public int Nombre { get; set; }
-        public int Contrasenia { get; set; }
+        public string Nombre { get; set; }
+        public string Contrasenia { get; set; }
+        public List<Receta> Recetas { get; set; }
     }
 }

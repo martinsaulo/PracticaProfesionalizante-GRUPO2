@@ -3,7 +3,18 @@
     public class Principal
     {
         ApplicationDbContext context = new ApplicationDbContext();
+        public bool NombreYaExistente (string NombreUsuario)
+        {
+            var usuarioEncontrado = context.Usuarios.SingleOrDefault(x => x.Nombre == NombreUsuario);
+            
+            return (usuarioEncontrado != null);
+        }
 
+        public void AltaUsuario (Usuario nuevoUsuario)
+        {
+            context.Usuarios.Add(nuevoUsuario);
+            context.SaveChanges();
+        }
         public void AltaReceta (Receta nuevaReceta)
         {
             context.Recetas.Add(nuevaReceta);
@@ -17,6 +28,19 @@
                 context.Recetas.Remove(recetaEncontrada);
                 context.SaveChanges();
             }
+        }
+        public void ModificacionReceta(Receta RecetaNueva)
+        {
+            var recetaEncontrada = context.Recetas.Find(RecetaNueva.Id);
+            if (recetaEncontrada != null)
+            {
+                recetaEncontrada = RecetaNueva;
+                context.SaveChanges();
+            }
+        }
+        public Receta BuscarReceta(int Id)
+        {
+            throw new NotImplementedException();
         }
         public void AltaEtiqueta (Etiqueta nuevaEtiqueta)
         {
