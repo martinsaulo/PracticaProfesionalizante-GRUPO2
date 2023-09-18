@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Back;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +17,7 @@ namespace Front
         {
             InitializeComponent();
         }
-
+        Principal BDD = new Principal();
         private void linkRegistro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Registro ventanaRegistro = new Registro();
@@ -27,12 +28,40 @@ namespace Front
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
+            
+            if (txtContrasenia.Text != "" || txtNombre.Text != "")
+            {
+                if (BDD.NombreYaExistente(txtNombre.Text))
+                {
+                    if (BDD.InicioSesionValido(txtNombre.Text, txtContrasenia.Text))
+                    {
+                        this.Visible = false;
+                        Menu_Principal ventanaMenu = new Menu_Principal();
+                        ventanaMenu.UsuarioLoggeado = BDD.DevolverUsuario(txtNombre.Text);
+                        ventanaMenu.ShowDialog();
+                        this.Visible = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Contraseña incorrecta.");
+                    }
 
-            Menu_Principal ventanaMenu = new Menu_Principal();
-            ventanaMenu.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Nombre de usuario incorrecto.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Complete todos los campos.");
+            }
+            
+        }
 
-            this.Visible = true;
+        private void Inicio_Sesion_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

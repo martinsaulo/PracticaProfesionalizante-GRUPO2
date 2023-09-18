@@ -17,6 +17,5 @@ namespace Back
         public int Calorias { get; set; }
         public DateTime Fecha_Creacion { get; set; }
         public DateTime Fecha_Modificacion { get; set; }
-        public int IdUsuario { get; set; }
     }
 }

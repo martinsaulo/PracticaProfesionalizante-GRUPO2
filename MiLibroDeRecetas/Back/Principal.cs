@@ -1,17 +1,50 @@
-﻿namespace Back
+﻿using System.Security.Cryptography;
+using System.Text;
+
+namespace Back
 {
     public class Principal
     {
         ApplicationDbContext context = new ApplicationDbContext();
+        
+        private byte[] ConseguirHash(string texto)
+        {
+            using (HashAlgorithm algorithm = SHA256.Create())
+                return algorithm.ComputeHash(Encoding.UTF8.GetBytes(texto));
+        }
+        private string EncriptadoConHash (string texto)
+        {
+            StringBuilder stringRetornado = new StringBuilder();
+            foreach (byte b in ConseguirHash(texto))
+                stringRetornado.Append(b.ToString("X2"));
+
+            return stringRetornado.ToString();
+        }
+        public bool InicioSesionValido(string NombreUsuario, string ContraseniaUsuario)
+        {
+            var usuarioEncontrado = context.Usuarios.SingleOrDefault(x => x.Nombre == NombreUsuario);
+
+            return (usuarioEncontrado.Contrasenia == EncriptadoConHash(ContraseniaUsuario));
+        }
         public bool NombreYaExistente (string NombreUsuario)
         {
             var usuarioEncontrado = context.Usuarios.SingleOrDefault(x => x.Nombre == NombreUsuario);
             
             return (usuarioEncontrado != null);
         }
-
-        public void AltaUsuario (Usuario nuevoUsuario)
+        public Usuario? DevolverUsuario(string NombreUsuario)
         {
+            var usuarioEncontrado = context.Usuarios.SingleOrDefault(x => x.Nombre == NombreUsuario);
+
+            return usuarioEncontrado;
+        }
+        public void AltaUsuario (string NombreUsuario, string ContraseniaUsuario)
+        {
+            Usuario nuevoUsuario = new Usuario();
+
+            nuevoUsuario.Nombre = NombreUsuario;
+            nuevoUsuario.Contrasenia = EncriptadoConHash(ContraseniaUsuario);
+
             context.Usuarios.Add(nuevoUsuario);
             context.SaveChanges();
         }
@@ -56,12 +89,16 @@
                 context.SaveChanges();
             }
         }
+        public List<Etiqueta> DevolverListaEtiquetas()
+        {
+            return context.Etiquetas.ToList();
+        }
         public void AltaIngrediente(Ingrediente nuevoIngrediente)
         {
             context.Ingredientes.Add(nuevoIngrediente);
             context.SaveChanges();
         }
-        public void Bajaingrediente(int Id)
+        public void BajaIngrediente(int Id)
         {
             var ingredienteEncontrado = context.Ingredientes.Find(Id);
             if (ingredienteEncontrado != null)
@@ -69,6 +106,10 @@
                 context.Ingredientes.Remove(ingredienteEncontrado);
                 context.SaveChanges();
             }
+        }
+        public List<Ingrediente> DevolverListaIngredientes()
+        {
+            return context.Ingredientes.ToList();
         }
     }
 }

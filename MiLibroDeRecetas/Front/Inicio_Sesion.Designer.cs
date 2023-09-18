@@ -116,6 +116,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Inicio_Sesion";
             Text = "Inicio de sesión";
+            Load += Inicio_Sesion_Load;
             ResumeLayout(false);
             PerformLayout();
         }

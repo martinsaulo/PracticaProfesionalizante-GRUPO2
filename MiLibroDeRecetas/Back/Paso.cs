@@ -10,6 +10,5 @@ namespace Back
     {
         public int Id { get; set; }
         public int Descripcion { get; set; }
-        public int IdReceta { get; set; }
     }
 }

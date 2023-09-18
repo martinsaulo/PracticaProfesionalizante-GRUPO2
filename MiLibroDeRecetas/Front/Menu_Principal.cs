@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Back;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,10 +17,16 @@ namespace Front
         {
             InitializeComponent();
         }
+        public Usuario? UsuarioLoggeado { get; set; }
 
         private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Menu_Principal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

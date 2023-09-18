@@ -55,13 +55,13 @@
             // opcionesToolStripMenuItem
             // 
             opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
-            opcionesToolStripMenuItem.Size = new Size(180, 22);
+            opcionesToolStripMenuItem.Size = new Size(143, 22);
             opcionesToolStripMenuItem.Text = "Opciones";
             // 
             // cerrarSesiónToolStripMenuItem
             // 
             cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            cerrarSesiónToolStripMenuItem.Size = new Size(180, 22);
+            cerrarSesiónToolStripMenuItem.Size = new Size(143, 22);
             cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
             cerrarSesiónToolStripMenuItem.Click += cerrarSesiónToolStripMenuItem_Click;
             // 
@@ -75,6 +75,7 @@
             MainMenuStrip = menuStrip1;
             Name = "Menu_Principal";
             Text = "Menú principal";
+            Load += Menu_Principal_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

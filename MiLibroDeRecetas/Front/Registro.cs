@@ -17,7 +17,7 @@ namespace Front
         {
             InitializeComponent();
         }
-        Principal BBDD = new Principal();
+        Principal BDD = new Principal();
         public bool ComprobarContrasenia()
         {
             if (txtContrasenia.Text != txtConfirmarContrasenia.Text)
@@ -33,7 +33,7 @@ namespace Front
         public bool ComprobarNombre()
         {
             
-            if (BBDD.NombreYaExistente(txtNombre.Text))
+            if (BDD.NombreYaExistente(txtNombre.Text))
             {
                 MessageBox.Show("El nombre de usuario ya existe. Intente con otro.");
                 return false;
@@ -54,15 +54,18 @@ namespace Front
         private void btnAceptar_Click(object sender, EventArgs e)
         {
 
-            if(ComprobarNombre() && ComprobarContrasenia())
+            if (txtNombre.Text == "" || txtContrasenia.Text == "" || txtConfirmarContrasenia.Text == "") 
             {
-                Usuario nuevoUsuario = new Usuario();
+                MessageBox.Show("Complete todos los campos.");
+            }
+            else
+            {
+                if (ComprobarNombre() && ComprobarContrasenia())
+                {
 
-                nuevoUsuario.Nombre = txtNombre.Text;
-                nuevoUsuario.Contrasenia = txtContrasenia.Text;
-
-                BBDD.AltaUsuario(nuevoUsuario);
-                this.Close();
+                    BDD.AltaUsuario(txtNombre.Text, txtContrasenia.Text);
+                    this.Close();
+                }
             }
 
         }

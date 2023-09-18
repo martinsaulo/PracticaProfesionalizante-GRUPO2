@@ -5,8 +5,6 @@ C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\bin\Debug\net6.0-windows\Front.pdb
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\bin\Debug\net6.0-windows\Azure.Core.dll
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\bin\Debug\net6.0-windows\Azure.Identity.dll
-C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\bin\Debug\net6.0-windows\EntityFramework.SqlServer.dll
-C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\bin\Debug\net6.0-windows\EntityFramework.dll
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\bin\Debug\net6.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\bin\Debug\net6.0-windows\Microsoft.Data.SqlClient.dll
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.dll
@@ -32,7 +30,6 @@ C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\bin\Debug\net6.0-windows\Microsoft.SqlServer.Server.dll
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\bin\Debug\net6.0-windows\System.Configuration.ConfigurationManager.dll
-C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\bin\Debug\net6.0-windows\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\bin\Debug\net6.0-windows\System.Memory.Data.dll
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\bin\Debug\net6.0-windows\System.Runtime.Caching.dll
@@ -42,11 +39,6 @@ C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\bin\Debug\net6.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\bin\Debug\net6.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\bin\Debug\net6.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
-C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
-C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
-C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\bin\Debug\net6.0-windows\Back.dll
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\bin\Debug\net6.0-windows\Back.pdb
