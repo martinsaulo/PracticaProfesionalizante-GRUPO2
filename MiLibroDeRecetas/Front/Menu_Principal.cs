@@ -28,5 +28,24 @@ namespace Front
         {
 
         }
+
+        private void btnEtiquetas_Click(object sender, EventArgs e)
+        {
+            EtiquetasABM nuevaVentana = new EtiquetasABM();
+
+            this.Visible = false;
+            nuevaVentana.ShowDialog();
+            this.Visible = true;
+
+        }
+
+        private void btnIngredientes_Click(object sender, EventArgs e)
+        {
+            IngredientesABM nuevaVentana = new IngredientesABM();
+
+            this.Visible = false;
+            nuevaVentana.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

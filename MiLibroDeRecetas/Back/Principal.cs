@@ -75,8 +75,11 @@ namespace Back
         {
             throw new NotImplementedException();
         }
-        public void AltaEtiqueta (Etiqueta nuevaEtiqueta)
+        public void AltaEtiqueta (string NombreEtiqueta)
         {
+            Etiqueta nuevaEtiqueta = new Etiqueta();
+            nuevaEtiqueta.Nombre = NombreEtiqueta;
+
             context.Etiquetas.Add(nuevaEtiqueta);
             context.SaveChanges();
         }
@@ -97,6 +100,15 @@ namespace Back
         {
             context.Ingredientes.Add(nuevoIngrediente);
             context.SaveChanges();
+        }
+        public void ModificacionIngrediente(Ingrediente nuevoIngrediente)
+        {
+            var ingredienteEncontrado = context.Ingredientes.Find(nuevoIngrediente.Id);
+            if (ingredienteEncontrado != null)
+            {
+                ingredienteEncontrado = nuevoIngrediente;
+                context.SaveChanges();
+            }
         }
         public void BajaIngrediente(int Id)
         {

@@ -12,7 +12,7 @@ namespace Back
         public Ingrediente Ingrediente_ {  get; set; }
         public int Cantidad { get; set; }
 
-        public int DevolverCalorias() {
+        public double DevolverCalorias() {
             return Cantidad * Ingrediente_.Calorias;
         }
         public string DevolverCantidad()
