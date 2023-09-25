@@ -40,6 +40,7 @@
             label3 = new Label();
             txtCalorias1 = new NumericUpDown();
             btnEliminar = new Button();
+            comboBoxOrden = new ComboBox();
             Id = new DataGridViewTextBoxColumn();
             Ingrediente = new DataGridViewTextBoxColumn();
             Calorias = new DataGridViewTextBoxColumn();
@@ -50,13 +51,16 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Id, Ingrediente, Calorias, Tipo });
             dataGridView1.Location = new Point(12, 12);
+            dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(428, 426);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
             // 
             // btnAgregar
             // 
@@ -76,6 +80,7 @@
             btnOrdenar.TabIndex = 2;
             btnOrdenar.Text = "Ordenar";
             btnOrdenar.UseVisualStyleBackColor = true;
+            btnOrdenar.Click += btnOrdenar_Click;
             // 
             // btnVolver
             // 
@@ -149,12 +154,24 @@
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
+            // comboBoxOrden
+            // 
+            comboBoxOrden.FormattingEnabled = true;
+            comboBoxOrden.Items.AddRange(new object[] { "Alfabeticamente", "Por calorias", "Por tipo", "Por id" });
+            comboBoxOrden.Location = new Point(448, 270);
+            comboBoxOrden.Name = "comboBoxOrden";
+            comboBoxOrden.Size = new Size(150, 23);
+            comboBoxOrden.TabIndex = 12;
+            // 
             // Id
             // 
+            Id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             Id.DataPropertyName = "Id";
             Id.Frozen = true;
             Id.HeaderText = "Id";
             Id.Name = "Id";
+            Id.ReadOnly = true;
+            Id.Resizable = DataGridViewTriState.False;
             Id.Width = 35;
             // 
             // Ingrediente
@@ -163,6 +180,8 @@
             Ingrediente.Frozen = true;
             Ingrediente.HeaderText = "Ingrediente";
             Ingrediente.Name = "Ingrediente";
+            Ingrediente.Resizable = DataGridViewTriState.False;
+            Ingrediente.SortMode = DataGridViewColumnSortMode.Programmatic;
             Ingrediente.Width = 150;
             // 
             // Calorias
@@ -170,18 +189,23 @@
             Calorias.DataPropertyName = "Calorias";
             Calorias.HeaderText = "Calorias";
             Calorias.Name = "Calorias";
+            Calorias.Resizable = DataGridViewTriState.False;
+            Calorias.SortMode = DataGridViewColumnSortMode.Programmatic;
             // 
             // Tipo
             // 
             Tipo.DataPropertyName = "Tipo";
             Tipo.HeaderText = "Tipo";
             Tipo.Name = "Tipo";
+            Tipo.Resizable = DataGridViewTriState.False;
+            Tipo.SortMode = DataGridViewColumnSortMode.Programmatic;
             // 
             // IngredientesABM
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(607, 450);
+            Controls.Add(comboBoxOrden);
             Controls.Add(btnEliminar);
             Controls.Add(txtCalorias1);
             Controls.Add(label3);
@@ -217,6 +241,7 @@
         private Label label3;
         private NumericUpDown numericUpDown1;
         private Button btnEliminar;
+        private ComboBox comboBoxOrden;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Ingrediente;
         private DataGridViewTextBoxColumn Calorias;

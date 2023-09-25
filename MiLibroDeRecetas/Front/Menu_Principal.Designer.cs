@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu_Principal));
             menuStrip1 = new MenuStrip();
             cuentaToolStripMenuItem = new ToolStripMenuItem();
-            opcionesToolStripMenuItem = new ToolStripMenuItem();
             cerrarSesiónToolStripMenuItem = new ToolStripMenuItem();
             btnRecetas = new Button();
             btnIngredientes = new Button();
@@ -50,21 +49,15 @@
             // 
             // cuentaToolStripMenuItem
             // 
-            cuentaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { opcionesToolStripMenuItem, cerrarSesiónToolStripMenuItem });
+            cuentaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cerrarSesiónToolStripMenuItem });
             cuentaToolStripMenuItem.Name = "cuentaToolStripMenuItem";
             cuentaToolStripMenuItem.Size = new Size(57, 20);
             cuentaToolStripMenuItem.Text = "Cuenta";
             // 
-            // opcionesToolStripMenuItem
-            // 
-            opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
-            opcionesToolStripMenuItem.Size = new Size(143, 22);
-            opcionesToolStripMenuItem.Text = "Opciones";
-            // 
             // cerrarSesiónToolStripMenuItem
             // 
             cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            cerrarSesiónToolStripMenuItem.Size = new Size(143, 22);
+            cerrarSesiónToolStripMenuItem.Size = new Size(180, 22);
             cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
             cerrarSesiónToolStripMenuItem.Click += cerrarSesiónToolStripMenuItem_Click;
             // 
@@ -120,7 +113,6 @@
         #endregion
         private MenuStrip menuStrip1;
         private ToolStripMenuItem cuentaToolStripMenuItem;
-        private ToolStripMenuItem opcionesToolStripMenuItem;
         private ToolStripMenuItem cerrarSesiónToolStripMenuItem;
         private Button btnRecetas;
         private Button btnIngredientes;

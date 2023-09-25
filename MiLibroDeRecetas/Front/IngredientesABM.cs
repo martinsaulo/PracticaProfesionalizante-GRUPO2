@@ -23,6 +23,12 @@ namespace Front
         {
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = BDD.DevolverListaIngredientes();
+            AjustarAnchoColumnas();
+        }
+        private void AjustarAnchoColumnas()
+        {
+            dataGridView1.Columns[0].Width = 35;
+            dataGridView1.Columns[1].Width = 150;
         }
         private void btnVolver_Click(object sender, EventArgs e)
         {
@@ -33,6 +39,7 @@ namespace Front
         {
             dataGridView1.DataSource = BDD.DevolverListaIngredientes();
             comboBoxTipos.SelectedIndex = 0;
+            comboBoxOrden.SelectedIndex = 0;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -46,7 +53,7 @@ namespace Front
                 Ingrediente nuevoIngrediente = new Ingrediente();
                 nuevoIngrediente.Nombre = txtNombre.Text;
                 nuevoIngrediente.Calorias = double.Parse(txtCalorias1.Text);
-                nuevoIngrediente.Tipo = comboBoxTipos.SelectedText;
+                nuevoIngrediente.Tipo = comboBoxTipos.SelectedItem.ToString();
 
                 BDD.AltaIngrediente(nuevoIngrediente);
                 ActualizarDataGridView();
@@ -63,6 +70,45 @@ namespace Front
             {
                 BDD.BajaIngrediente((int)dataGridView1.CurrentRow.Cells[0].Value);
                 ActualizarDataGridView();
+            }
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            Ingrediente ingredienteModificado = new Ingrediente();
+
+            ingredienteModificado.Id = (int)dataGridView1[0, e.RowIndex].Value;
+            ingredienteModificado.Nombre = dataGridView1[1, e.RowIndex].Value.ToString();
+            ingredienteModificado.Calorias = (double)dataGridView1[2, e.RowIndex].Value;
+            ingredienteModificado.Tipo = dataGridView1[3, e.RowIndex].Value.ToString();
+
+            BDD.ModificacionIngrediente(ingredienteModificado);
+        }
+
+        private void btnOrdenar_Click(object sender, EventArgs e)
+        {
+            switch (comboBoxOrden.SelectedIndex)
+            {
+                case 0:
+                    dataGridView1.DataSource = null;
+                    dataGridView1.DataSource = BDD.DevolverListaIngredientes().OrderBy(x => x.Nombre).ToList();
+                    AjustarAnchoColumnas();
+                    break;
+                case 1:
+                    dataGridView1.DataSource = null;
+                    dataGridView1.DataSource = BDD.DevolverListaIngredientes().OrderBy(x => x.Calorias).ToList();
+                    AjustarAnchoColumnas();
+                    break;
+                case 2:
+                    dataGridView1.DataSource = null;
+                    dataGridView1.DataSource = BDD.DevolverListaIngredientes().OrderBy(x => x.Tipo).ToList();
+                    AjustarAnchoColumnas();
+                    break;
+                case 3:
+                    dataGridView1.DataSource = null;
+                    dataGridView1.DataSource = BDD.DevolverListaIngredientes().OrderBy(x => x.Id).ToList();
+                    AjustarAnchoColumnas();
+                    break;
             }
         }
     }
