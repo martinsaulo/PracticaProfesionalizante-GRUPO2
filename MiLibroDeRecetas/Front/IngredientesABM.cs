@@ -23,6 +23,7 @@ namespace Front
         {
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = BDD.DevolverListaIngredientes();
+            ((DataGridViewComboBoxColumn)dataGridView1.Columns["Tipo"]).DataSource = new List<string> { "Mililitro", "Unidad", "Gramo" };
             AjustarAnchoColumnas();
         }
         private void AjustarAnchoColumnas()
@@ -37,7 +38,7 @@ namespace Front
 
         private void IngredientesABM_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BDD.DevolverListaIngredientes();
+            ActualizarDataGridView();
             comboBoxTipos.SelectedIndex = 0;
             comboBoxOrden.SelectedIndex = 0;
         }

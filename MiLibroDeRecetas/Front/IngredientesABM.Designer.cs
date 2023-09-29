@@ -44,7 +44,7 @@
             Id = new DataGridViewTextBoxColumn();
             Ingrediente = new DataGridViewTextBoxColumn();
             Calorias = new DataGridViewTextBoxColumn();
-            Tipo = new DataGridViewTextBoxColumn();
+            Tipo = new DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtCalorias1).BeginInit();
             SuspendLayout();
@@ -245,6 +245,6 @@
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Ingrediente;
         private DataGridViewTextBoxColumn Calorias;
-        private DataGridViewTextBoxColumn Tipo;
+        private DataGridViewComboBoxColumn Tipo;
     }
 }
