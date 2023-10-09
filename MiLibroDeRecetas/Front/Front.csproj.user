@@ -13,7 +13,16 @@
     <Compile Update="Menu_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="PantallaRecetas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RecetasAltaModificacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Registro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="VisorRecetas.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

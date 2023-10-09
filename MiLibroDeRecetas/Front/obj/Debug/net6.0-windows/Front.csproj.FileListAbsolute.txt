@@ -60,3 +60,6 @@ C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\obj\Debug\net6.0-windows\Front.Properties.Resources.resources
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\obj\Debug\net6.0-windows\Front.EtiquetasABM.resources
 C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\obj\Debug\net6.0-windows\Front.IngredientesABM.resources
+C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\obj\Debug\net6.0-windows\Front.PantallaRecetas.resources
+C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\obj\Debug\net6.0-windows\Front.VisorRecetas.resources
+C:\Users\Usuario\Desktop\Main\PracticaProfesionalizante-GRUPO2\MiLibroDeRecetas\Front\obj\Debug\net6.0-windows\Front.RecetasAltaModificacion.resources

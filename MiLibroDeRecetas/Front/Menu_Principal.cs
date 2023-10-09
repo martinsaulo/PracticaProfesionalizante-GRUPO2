@@ -17,7 +17,7 @@ namespace Front
         {
             InitializeComponent();
         }
-        public Usuario? UsuarioLoggeado { get; set; }
+        public int IdUsuarioLoggeado { get; set; }
 
         private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -44,6 +44,16 @@ namespace Front
             IngredientesABM nuevaVentana = new IngredientesABM();
 
             this.Visible = false;
+            nuevaVentana.ShowDialog();
+            this.Visible = true;
+        }
+
+        private void btnRecetas_Click(object sender, EventArgs e)
+        {
+            PantallaRecetas nuevaVentana = new PantallaRecetas();
+
+            this.Visible = false;
+            nuevaVentana.IdUsuarioLogueado = IdUsuarioLoggeado;
             nuevaVentana.ShowDialog();
             this.Visible = true;
         }

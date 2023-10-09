@@ -59,16 +59,11 @@ namespace Back.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("RecetaId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Tipo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("RecetaId");
 
                     b.ToTable("Ingredientes");
                 });
@@ -87,9 +82,14 @@ namespace Back.Migrations
                     b.Property<int>("Ingrediente_Id")
                         .HasColumnType("int");
 
+                    b.Property<int?>("RecetaId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("Ingrediente_Id");
+
+                    b.HasIndex("RecetaId");
 
                     b.ToTable("IngredientesReceta");
                 });
@@ -102,8 +102,9 @@ namespace Back.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Descripcion")
-                        .HasColumnType("int");
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("RecetaId")
                         .HasColumnType("int");
@@ -178,13 +179,6 @@ namespace Back.Migrations
                         .HasForeignKey("RecetaId");
                 });
 
-            modelBuilder.Entity("Back.Ingrediente", b =>
-                {
-                    b.HasOne("Back.Receta", null)
-                        .WithMany("Ingredientes")
-                        .HasForeignKey("RecetaId");
-                });
-
             modelBuilder.Entity("Back.IngredienteReceta", b =>
                 {
                     b.HasOne("Back.Ingrediente", "Ingrediente_")
@@ -192,6 +186,10 @@ namespace Back.Migrations
                         .HasForeignKey("Ingrediente_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("Back.Receta", null)
+                        .WithMany("Ingredientes")
+                        .HasForeignKey("RecetaId");
 
                     b.Navigation("Ingrediente_");
                 });

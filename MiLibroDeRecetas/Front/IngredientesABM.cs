@@ -21,7 +21,6 @@ namespace Front
         Principal BDD = new Principal();
         private void ActualizarDataGridView()
         {
-            dataGridView1.DataSource = null;
             dataGridView1.DataSource = BDD.DevolverListaIngredientes();
             ((DataGridViewComboBoxColumn)dataGridView1.Columns["Tipo"]).DataSource = new List<string> { "Mililitro", "Unidad", "Gramo" };
             AjustarAnchoColumnas();
@@ -58,6 +57,7 @@ namespace Front
 
                 BDD.AltaIngrediente(nuevoIngrediente);
                 ActualizarDataGridView();
+                txtNombre.Clear();
             }
         }
 
@@ -84,6 +84,7 @@ namespace Front
             ingredienteModificado.Tipo = dataGridView1[3, e.RowIndex].Value.ToString();
 
             BDD.ModificacionIngrediente(ingredienteModificado);
+            //Controlar exception con evento DataError
         }
 
         private void btnOrdenar_Click(object sender, EventArgs e)

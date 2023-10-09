@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IngredientesABM));
             dataGridView1 = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            Ingrediente = new DataGridViewTextBoxColumn();
+            Calorias = new DataGridViewTextBoxColumn();
+            Tipo = new DataGridViewComboBoxColumn();
             btnAgregar = new Button();
             btnOrdenar = new Button();
             btnVolver = new Button();
@@ -41,10 +45,6 @@
             txtCalorias1 = new NumericUpDown();
             btnEliminar = new Button();
             comboBoxOrden = new ComboBox();
-            Id = new DataGridViewTextBoxColumn();
-            Ingrediente = new DataGridViewTextBoxColumn();
-            Calorias = new DataGridViewTextBoxColumn();
-            Tipo = new DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtCalorias1).BeginInit();
             SuspendLayout();
@@ -61,6 +61,43 @@
             dataGridView1.Size = new Size(428, 426);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
+            // 
+            // Id
+            // 
+            Id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            Id.DataPropertyName = "Id";
+            Id.Frozen = true;
+            Id.HeaderText = "Id";
+            Id.Name = "Id";
+            Id.ReadOnly = true;
+            Id.Resizable = DataGridViewTriState.False;
+            Id.Width = 35;
+            // 
+            // Ingrediente
+            // 
+            Ingrediente.DataPropertyName = "Nombre";
+            Ingrediente.Frozen = true;
+            Ingrediente.HeaderText = "Ingrediente";
+            Ingrediente.Name = "Ingrediente";
+            Ingrediente.Resizable = DataGridViewTriState.False;
+            Ingrediente.SortMode = DataGridViewColumnSortMode.Programmatic;
+            Ingrediente.Width = 150;
+            // 
+            // Calorias
+            // 
+            Calorias.DataPropertyName = "Calorias";
+            Calorias.HeaderText = "Calorias";
+            Calorias.Name = "Calorias";
+            Calorias.Resizable = DataGridViewTriState.False;
+            Calorias.SortMode = DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Tipo
+            // 
+            Tipo.DataPropertyName = "Tipo";
+            Tipo.HeaderText = "Tipo";
+            Tipo.Name = "Tipo";
+            Tipo.Resizable = DataGridViewTriState.False;
+            Tipo.SortMode = DataGridViewColumnSortMode.Programmatic;
             // 
             // btnAgregar
             // 
@@ -120,7 +157,7 @@
             // comboBoxTipos
             // 
             comboBoxTipos.FormattingEnabled = true;
-            comboBoxTipos.Items.AddRange(new object[] { "Unidad", "Gramo", "Miligramo" });
+            comboBoxTipos.Items.AddRange(new object[] { "Unidad", "Gramo", "Mililitro" });
             comboBoxTipos.Location = new Point(447, 144);
             comboBoxTipos.Name = "comboBoxTipos";
             comboBoxTipos.Size = new Size(150, 23);
@@ -162,43 +199,6 @@
             comboBoxOrden.Name = "comboBoxOrden";
             comboBoxOrden.Size = new Size(150, 23);
             comboBoxOrden.TabIndex = 12;
-            // 
-            // Id
-            // 
-            Id.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            Id.DataPropertyName = "Id";
-            Id.Frozen = true;
-            Id.HeaderText = "Id";
-            Id.Name = "Id";
-            Id.ReadOnly = true;
-            Id.Resizable = DataGridViewTriState.False;
-            Id.Width = 35;
-            // 
-            // Ingrediente
-            // 
-            Ingrediente.DataPropertyName = "Nombre";
-            Ingrediente.Frozen = true;
-            Ingrediente.HeaderText = "Ingrediente";
-            Ingrediente.Name = "Ingrediente";
-            Ingrediente.Resizable = DataGridViewTriState.False;
-            Ingrediente.SortMode = DataGridViewColumnSortMode.Programmatic;
-            Ingrediente.Width = 150;
-            // 
-            // Calorias
-            // 
-            Calorias.DataPropertyName = "Calorias";
-            Calorias.HeaderText = "Calorias";
-            Calorias.Name = "Calorias";
-            Calorias.Resizable = DataGridViewTriState.False;
-            Calorias.SortMode = DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Tipo
-            // 
-            Tipo.DataPropertyName = "Tipo";
-            Tipo.HeaderText = "Tipo";
-            Tipo.Name = "Tipo";
-            Tipo.Resizable = DataGridViewTriState.False;
-            Tipo.SortMode = DataGridViewColumnSortMode.Programmatic;
             // 
             // IngredientesABM
             // 

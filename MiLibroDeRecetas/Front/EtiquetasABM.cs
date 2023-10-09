@@ -67,7 +67,7 @@ namespace Front
             else
             {
                 BDD.AltaEtiqueta(txtNombre.Text);
-
+                txtNombre.Clear();
                 ActualizarLista();
             }
         }

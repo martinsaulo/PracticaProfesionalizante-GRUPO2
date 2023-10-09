@@ -57,7 +57,7 @@
             // cerrarSesiónToolStripMenuItem
             // 
             cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            cerrarSesiónToolStripMenuItem.Size = new Size(180, 22);
+            cerrarSesiónToolStripMenuItem.Size = new Size(143, 22);
             cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
             cerrarSesiónToolStripMenuItem.Click += cerrarSesiónToolStripMenuItem_Click;
             // 
@@ -69,6 +69,7 @@
             btnRecetas.TabIndex = 2;
             btnRecetas.Text = "Mis Recetas";
             btnRecetas.UseVisualStyleBackColor = true;
+            btnRecetas.Click += btnRecetas_Click;
             // 
             // btnIngredientes
             // 

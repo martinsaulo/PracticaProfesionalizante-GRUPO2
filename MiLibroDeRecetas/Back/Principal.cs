@@ -23,7 +23,10 @@ namespace Back
         public bool InicioSesionValido(string NombreUsuario, string ContraseniaUsuario)
         {
             var usuarioEncontrado = context.Usuarios.SingleOrDefault(x => x.Nombre == NombreUsuario);
-
+            if (usuarioEncontrado == null)
+            {
+                throw new NullReferenceException("Nombre de usuario no encontrado.");
+            }
             return (usuarioEncontrado.Contrasenia == EncriptadoConHash(ContraseniaUsuario));
         }
         public bool NombreYaExistente (string NombreUsuario)
@@ -32,11 +35,18 @@ namespace Back
             
             return (usuarioEncontrado != null);
         }
-        public Usuario? DevolverUsuario(string NombreUsuario)
+        public Usuario DevolverUsuario(string NombreUsuario)
         {
             var usuarioEncontrado = context.Usuarios.SingleOrDefault(x => x.Nombre == NombreUsuario);
 
-            return usuarioEncontrado;
+            if(usuarioEncontrado != null){
+                return usuarioEncontrado;
+            }
+            else
+            {
+                throw new NullReferenceException("Usuario no encontrado.");
+            }
+            
         }
         public void AltaUsuario (string NombreUsuario, string ContraseniaUsuario)
         {
@@ -44,14 +54,25 @@ namespace Back
 
             nuevoUsuario.Nombre = NombreUsuario;
             nuevoUsuario.Contrasenia = EncriptadoConHash(ContraseniaUsuario);
+            nuevoUsuario.Recetas = new List<Receta>();
 
             context.Usuarios.Add(nuevoUsuario);
             context.SaveChanges();
         }
-        public void AltaReceta (Receta nuevaReceta)
+        public void AltaReceta (Receta nuevaReceta, int idUsuario)
         {
-            context.Recetas.Add(nuevaReceta);
-            context.SaveChanges();
+            var usuarioEncontrado = context.Usuarios.Find(idUsuario);
+            if(usuarioEncontrado != null)
+            {
+                nuevaReceta.Fecha_Creacion = DateTime.Now;
+                nuevaReceta.Fecha_Modificacion = DateTime.Now;
+                usuarioEncontrado.Recetas.Add(nuevaReceta);
+                context.SaveChanges();
+            }
+            else
+            {
+                throw new NullReferenceException("Usuario no encontrado.");
+            }
         }
         public void BajaReceta(int Id)
         {
@@ -61,6 +82,10 @@ namespace Back
                 context.Recetas.Remove(recetaEncontrada);
                 context.SaveChanges();
             }
+            else
+            {
+                throw new NullReferenceException("Receta no encontrada.");
+            }
         }
         public void ModificacionReceta(Receta RecetaNueva)
         {
@@ -68,13 +93,38 @@ namespace Back
             if (recetaEncontrada != null)
             {
                 recetaEncontrada = RecetaNueva;
+                recetaEncontrada.Fecha_Modificacion = DateTime.Now;
                 context.SaveChanges();
             }
+            else
+            {
+                throw new NullReferenceException("Receta no encontrada.");
+            }
         }
-        public Receta BuscarReceta(int Id)
+        public List<Receta> FiltrarPorEtiqueta(List<Receta> Recetas, Etiqueta etiqueta)
         {
-            throw new NotImplementedException();
+            List<Receta> recetasRetornadas = new List<Receta>();
+            foreach (Receta x in Recetas)
+            {
+                if (x.EtiquetaIncluida(etiqueta))
+                {
+                    recetasRetornadas.Add(x);
+                }
+            }
+            return recetasRetornadas;
         }
+        public List<Receta> DevolverRecetasUsuario(int idUsuario)
+        {
+            var usuarioEncontrado = context.Usuarios.Find(idUsuario);
+            if (usuarioEncontrado != null)
+            {
+                return usuarioEncontrado.Recetas;
+            }
+            else
+            {
+                throw new NullReferenceException("Usuario no encontrado.");
+            }
+        } 
         public void AltaEtiqueta (string NombreEtiqueta)
         {
             Etiqueta nuevaEtiqueta = new Etiqueta();
@@ -90,6 +140,10 @@ namespace Back
             {
                 context.Etiquetas.Remove(etiquetaEncontrada);
                 context.SaveChanges();
+            }
+            else
+            {
+                throw new NullReferenceException("Etiqueta no encontrada.");
             }
         }
         public List<Etiqueta> DevolverListaEtiquetas()
@@ -109,6 +163,10 @@ namespace Back
                 ingredienteEncontrado = nuevoIngrediente;
                 context.SaveChanges();
             }
+            else
+            {
+                throw new NullReferenceException("Ingrediente no encontrado.");
+            }
         }
         public void BajaIngrediente(int Id)
         {
@@ -117,6 +175,10 @@ namespace Back
             {
                 context.Ingredientes.Remove(ingredienteEncontrado);
                 context.SaveChanges();
+            }
+            else
+            {
+                throw new NullReferenceException("Ingrediente no encontrado.");
             }
         }
         public List<Ingrediente> DevolverListaIngredientes()
