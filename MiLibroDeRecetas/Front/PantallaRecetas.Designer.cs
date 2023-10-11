@@ -28,7 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PantallaRecetas));
             dataGridView1 = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            Titulo = new DataGridViewTextBoxColumn();
+            Calorias = new DataGridViewTextBoxColumn();
+            FechaCreacion = new DataGridViewTextBoxColumn();
+            FechaModificacion = new DataGridViewTextBoxColumn();
             btnAgregar = new Button();
             btnEliminar = new Button();
             btnFiltrar = new Button();
@@ -39,121 +46,32 @@
             comboBoxOrdenar = new ComboBox();
             listBoxEtiquetas = new ListBox();
             label1 = new Label();
-            Id = new DataGridViewTextBoxColumn();
-            Titulo = new DataGridViewTextBoxColumn();
-            Calorias = new DataGridViewTextBoxColumn();
-            FechaCreacion = new DataGridViewTextBoxColumn();
-            FechaModificacion = new DataGridViewTextBoxColumn();
+            btnRestaurar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Id, Titulo, Calorias, FechaCreacion, FechaModificacion });
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.Location = new Point(12, 12);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(593, 426);
             dataGridView1.TabIndex = 0;
-            dataGridView1.CellContentDoubleClick += dataGridView1_CellContentDoubleClick;
+            dataGridView1.CellContentDoubleClick += dataGridView1_CellDoubleClick;
             dataGridView1.CurrentCellChanged += dataGridView1_CurrentCellChanged;
-            // 
-            // btnAgregar
-            // 
-            btnAgregar.Location = new Point(611, 12);
-            btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(177, 23);
-            btnAgregar.TabIndex = 1;
-            btnAgregar.Text = "Nueva receta";
-            btnAgregar.UseVisualStyleBackColor = true;
-            btnAgregar.Click += btnAgregar_Click;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.Location = new Point(611, 70);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(177, 23);
-            btnEliminar.TabIndex = 2;
-            btnEliminar.Text = "Eliminar receta";
-            btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += btnEliminar_Click;
-            // 
-            // btnFiltrar
-            // 
-            btnFiltrar.Location = new Point(611, 144);
-            btnFiltrar.Name = "btnFiltrar";
-            btnFiltrar.Size = new Size(177, 23);
-            btnFiltrar.TabIndex = 3;
-            btnFiltrar.Text = "Filtrar";
-            btnFiltrar.UseVisualStyleBackColor = true;
-            btnFiltrar.Click += btnFiltrar_Click;
-            // 
-            // btnOrdenar
-            // 
-            btnOrdenar.Location = new Point(611, 217);
-            btnOrdenar.Name = "btnOrdenar";
-            btnOrdenar.Size = new Size(177, 23);
-            btnOrdenar.TabIndex = 4;
-            btnOrdenar.Text = "Ordenar por";
-            btnOrdenar.UseVisualStyleBackColor = true;
-            btnOrdenar.Click += btnOrdenar_Click;
-            // 
-            // btnModificar
-            // 
-            btnModificar.Location = new Point(611, 41);
-            btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(177, 23);
-            btnModificar.TabIndex = 5;
-            btnModificar.Text = "Modificar receta";
-            btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // btnVolver
-            // 
-            btnVolver.Location = new Point(684, 415);
-            btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(104, 23);
-            btnVolver.TabIndex = 6;
-            btnVolver.Text = "Volver";
-            btnVolver.UseVisualStyleBackColor = true;
-            btnVolver.Click += btnVolver_Click;
-            // 
-            // comboBoxFiltrar
-            // 
-            comboBoxFiltrar.FormattingEnabled = true;
-            comboBoxFiltrar.Location = new Point(611, 115);
-            comboBoxFiltrar.Name = "comboBoxFiltrar";
-            comboBoxFiltrar.Size = new Size(177, 23);
-            comboBoxFiltrar.TabIndex = 7;
-            // 
-            // comboBoxOrdenar
-            // 
-            comboBoxOrdenar.FormattingEnabled = true;
-            comboBoxOrdenar.Items.AddRange(new object[] { "Alfabeticamente", "Por calorias", "Por fecha de creación", "Por ultima modificación" });
-            comboBoxOrdenar.Location = new Point(611, 188);
-            comboBoxOrdenar.Name = "comboBoxOrdenar";
-            comboBoxOrdenar.Size = new Size(177, 23);
-            comboBoxOrdenar.TabIndex = 8;
-            // 
-            // listBoxEtiquetas
-            // 
-            listBoxEtiquetas.FormattingEnabled = true;
-            listBoxEtiquetas.ItemHeight = 15;
-            listBoxEtiquetas.Location = new Point(611, 271);
-            listBoxEtiquetas.Name = "listBoxEtiquetas";
-            listBoxEtiquetas.Size = new Size(177, 139);
-            listBoxEtiquetas.TabIndex = 9;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(611, 253);
-            label1.Name = "label1";
-            label1.Size = new Size(58, 15);
-            label1.TabIndex = 10;
-            label1.Text = "Etiquetas:";
             // 
             // Id
             // 
@@ -190,11 +108,117 @@
             FechaModificacion.Name = "FechaModificacion";
             FechaModificacion.ReadOnly = true;
             // 
+            // btnAgregar
+            // 
+            btnAgregar.Location = new Point(611, 12);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(177, 23);
+            btnAgregar.TabIndex = 1;
+            btnAgregar.Text = "Nueva receta";
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Location = new Point(611, 70);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(177, 23);
+            btnEliminar.TabIndex = 2;
+            btnEliminar.Text = "Eliminar receta";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // btnFiltrar
+            // 
+            btnFiltrar.Location = new Point(611, 159);
+            btnFiltrar.Name = "btnFiltrar";
+            btnFiltrar.Size = new Size(177, 23);
+            btnFiltrar.TabIndex = 3;
+            btnFiltrar.Text = "Filtrar";
+            btnFiltrar.UseVisualStyleBackColor = true;
+            btnFiltrar.Click += btnFiltrar_Click;
+            // 
+            // btnOrdenar
+            // 
+            btnOrdenar.Location = new Point(611, 217);
+            btnOrdenar.Name = "btnOrdenar";
+            btnOrdenar.Size = new Size(177, 23);
+            btnOrdenar.TabIndex = 4;
+            btnOrdenar.Text = "Ordenar por";
+            btnOrdenar.UseVisualStyleBackColor = true;
+            btnOrdenar.Click += btnOrdenar_Click;
+            // 
+            // btnModificar
+            // 
+            btnModificar.Location = new Point(611, 41);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(177, 23);
+            btnModificar.TabIndex = 5;
+            btnModificar.Text = "Modificar receta";
+            btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
+            // 
+            // btnVolver
+            // 
+            btnVolver.Location = new Point(684, 415);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(104, 23);
+            btnVolver.TabIndex = 6;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += btnVolver_Click;
+            // 
+            // comboBoxFiltrar
+            // 
+            comboBoxFiltrar.FormattingEnabled = true;
+            comboBoxFiltrar.Location = new Point(611, 130);
+            comboBoxFiltrar.Name = "comboBoxFiltrar";
+            comboBoxFiltrar.Size = new Size(177, 23);
+            comboBoxFiltrar.TabIndex = 7;
+            // 
+            // comboBoxOrdenar
+            // 
+            comboBoxOrdenar.FormattingEnabled = true;
+            comboBoxOrdenar.Items.AddRange(new object[] { "Alfabeticamente", "Por calorias", "Por fecha de creación", "Por ultima modificación" });
+            comboBoxOrdenar.Location = new Point(611, 188);
+            comboBoxOrdenar.Name = "comboBoxOrdenar";
+            comboBoxOrdenar.Size = new Size(177, 23);
+            comboBoxOrdenar.TabIndex = 8;
+            // 
+            // listBoxEtiquetas
+            // 
+            listBoxEtiquetas.FormattingEnabled = true;
+            listBoxEtiquetas.ItemHeight = 15;
+            listBoxEtiquetas.Location = new Point(611, 271);
+            listBoxEtiquetas.Name = "listBoxEtiquetas";
+            listBoxEtiquetas.Size = new Size(177, 139);
+            listBoxEtiquetas.TabIndex = 9;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(611, 253);
+            label1.Name = "label1";
+            label1.Size = new Size(58, 15);
+            label1.TabIndex = 10;
+            label1.Text = "Etiquetas:";
+            // 
+            // btnRestaurar
+            // 
+            btnRestaurar.Location = new Point(611, 99);
+            btnRestaurar.Name = "btnRestaurar";
+            btnRestaurar.Size = new Size(177, 23);
+            btnRestaurar.TabIndex = 11;
+            btnRestaurar.Text = "Restaurar Lista";
+            btnRestaurar.UseVisualStyleBackColor = true;
+            btnRestaurar.Click += btnRestaurar_Click;
+            // 
             // PantallaRecetas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnRestaurar);
             Controls.Add(label1);
             Controls.Add(listBoxEtiquetas);
             Controls.Add(comboBoxOrdenar);
@@ -206,6 +230,7 @@
             Controls.Add(btnEliminar);
             Controls.Add(btnAgregar);
             Controls.Add(dataGridView1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "PantallaRecetas";
             Text = "Recetas";
             Load += PantallaRecetas_Load;
@@ -232,5 +257,6 @@
         private DataGridViewTextBoxColumn Calorias;
         private DataGridViewTextBoxColumn FechaCreacion;
         private DataGridViewTextBoxColumn FechaModificacion;
+        private Button btnRestaurar;
     }
 }

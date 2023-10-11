@@ -21,6 +21,7 @@ namespace Front
         public int idUsuarioLoggueado { get; set; }
         public bool esModificacion { get; set; }
         public Receta? nuevaReceta { get; set; }
+        public int idReceta { get; set; }
         private bool ComprobarTitulo()
         {
             if (txtTitulo.Text == "")
@@ -35,7 +36,7 @@ namespace Front
         }
         private bool ComprobarIngredientes()
         {
-            if(listBoxIngrediente.Items.Count > 0)
+            if (listBoxIngrediente.Items.Count > 0)
             {
                 return true;
             }
@@ -73,12 +74,37 @@ namespace Front
             listBoxEtiquetas.DisplayMember = "Nombre";
             listBoxIngrediente.DisplayMember = "CantidadTipo";
 
-            if (!esModificacion)
+
+            nuevaReceta = new Receta();
+            nuevaReceta.Etiquetas = new List<EtiquetaReceta>();
+            nuevaReceta.Ingredientes = new List<IngredienteReceta>();
+            nuevaReceta.Pasos = new List<Paso>();
+
+            if (esModificacion)
             {
-                nuevaReceta = new Receta();
-                nuevaReceta.Etiquetas = new List<Etiqueta>();
-                nuevaReceta.Ingredientes = new List<IngredienteReceta>();
-                nuevaReceta.Pasos = new List<Paso>();
+                Receta recetaModificar = new Receta();
+                recetaModificar = BDD.DevolverReceta(idReceta);
+
+                txtTitulo.Text = recetaModificar.Titulo;
+                txtDescripcion.Text = recetaModificar.Descripcion;
+
+                foreach (var et in recetaModificar.Etiquetas)
+                {
+                    listBoxEtiquetas.Items.Add(et.Etiqueta);
+                }
+
+                foreach (var ing in recetaModificar.Ingredientes)
+                {
+                    listBoxIngrediente.Items.Add(ing);
+                }
+
+                int cont = 0;
+                foreach (var paso in recetaModificar.Pasos)
+                {
+                    dataGridViewPasos.Rows.Add(new DataGridViewRow());
+                    dataGridViewPasos.Rows[cont].Cells[0].Value = paso.Descripcion;
+                    cont++;
+                }
             }
         }
 
@@ -133,7 +159,7 @@ namespace Front
                 {
                     IngredienteReceta nuevoIngrediente = new IngredienteReceta();
 
-                    nuevoIngrediente.Ingrediente_ = (Ingrediente)comboBoxIngredientes.SelectedItem;
+                    nuevoIngrediente.Ingrediente = (Ingrediente)comboBoxIngredientes.SelectedItem;
                     nuevoIngrediente.Cantidad = (int)numCantidad.Value;
 
                     listBoxIngrediente.Items.Add(nuevoIngrediente);
@@ -170,30 +196,33 @@ namespace Front
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (ComprobarTitulo() && ComprobarIngredientes() && ComprobarPasos() )
+            if (ComprobarTitulo() && ComprobarIngredientes() && ComprobarPasos())
             {
+
                 nuevaReceta.Titulo = txtTitulo.Text;
                 nuevaReceta.Descripcion = txtDescripcion.Text;
-                
-                foreach(var item in listBoxEtiquetas.Items)
+
+                foreach (var item in listBoxEtiquetas.Items)
                 {
-                    if(item != null)
+                    if (item != null)
                     {
-                        nuevaReceta.Etiquetas.Add((Etiqueta)item);
+                        EtiquetaReceta nuevaEtiqueta = new EtiquetaReceta();
+                        nuevaEtiqueta.Etiqueta = (Etiqueta)item;
+                        nuevaReceta.Etiquetas.Add(nuevaEtiqueta);
                     }
                 }
-                
-                foreach(var item in listBoxIngrediente.Items)
+
+                foreach (var item in listBoxIngrediente.Items)
                 {
-                    if(item != null)
+                    if (item != null)
                     {
                         nuevaReceta.Ingredientes.Add((IngredienteReceta)item);
                     }
                 }
 
-                foreach(DataGridViewRow row in dataGridViewPasos.Rows)
+                foreach (DataGridViewRow row in dataGridViewPasos.Rows)
                 {
-                    if(row != null && row.Cells[0].Value != null)
+                    if (row != null && row.Cells[0].Value != null)
                     {
                         Paso nuevoPaso = new Paso();
                         nuevoPaso.Descripcion = row.Cells[0].Value.ToString();
@@ -202,8 +231,15 @@ namespace Front
                 }
 
                 nuevaReceta.CalcularCalorias();
-
-                BDD.AltaReceta(nuevaReceta, idUsuarioLoggueado);
+                if (esModificacion)
+                {
+                    nuevaReceta.Id = idReceta;
+                    BDD.ModificacionReceta(nuevaReceta);
+                }
+                else
+                {
+                    BDD.AltaReceta(nuevaReceta, idUsuarioLoggueado);
+                }
 
                 this.Close();
             }

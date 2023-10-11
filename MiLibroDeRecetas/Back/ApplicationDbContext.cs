@@ -15,6 +15,7 @@ namespace Back
         public DbSet<Etiqueta> Etiquetas { get; set; }
         public DbSet<Paso> Pasos { get; set; }
         public DbSet<IngredienteReceta> IngredientesReceta { get; set; }
+        public DbSet<EtiquetaReceta> EtiquetasRecetas { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("server=DESKTOP-FU6CNU8\\SQLEXPRESS;database=MiLibroDeRecetasBDD;trusted_connection=true;Encrypt=False");

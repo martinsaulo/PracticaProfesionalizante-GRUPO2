@@ -36,7 +36,7 @@ namespace Front
             try
             {
                 listBoxEtiquetas.DataSource = recetaCargada.Etiquetas;
-                listBoxEtiquetas.DisplayMember = "Nombre";
+                listBoxEtiquetas.DisplayMember = "NombreEtiqueta";
             }
             catch (NullReferenceException ex)
             {
@@ -55,6 +55,7 @@ namespace Front
 
             dataGridViewPasos.DataSource = recetaCargada.Pasos;
             dataGridViewPasos.Columns["Id"].Visible = false;
+            dataGridViewPasos.Columns["RecetaId"].Visible = false;
         }
     }
 }

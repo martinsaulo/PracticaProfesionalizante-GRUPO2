@@ -28,6 +28,7 @@ namespace Front
             dataGridView1.Columns["Descripcion"].Visible = false;
             dataGridView1.Columns["Titulo"].Width = 160;
             dataGridView1.Columns["Id"].Width = 40;
+            dataGridView1.Columns["UsuarioId"].Visible = false;
             dataGridView1.Columns[4].Width = 125;
             dataGridView1.Columns[5].Width = 125;
         }
@@ -67,13 +68,14 @@ namespace Front
             {
                 int indexFila = dataGridView1.CurrentCell.RowIndex;
                 listBoxEtiquetas.DataSource = ((Receta)dataGridView1.Rows[indexFila].DataBoundItem).Etiquetas;
+                listBoxEtiquetas.DisplayMember = "NombreEtiqueta";
             }
             catch (System.NullReferenceException ex)
             {
                 listBoxEtiquetas.DataSource = null;
             }
 
-            listBoxEtiquetas.DisplayMember = "Nombre";
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -138,13 +140,13 @@ namespace Front
             ActualizarDataGridView(BDD.DevolverRecetasUsuario(IdUsuarioLogueado));
         }
 
-        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 int indexFila = e.RowIndex;
                 VisorRecetas nuevaVentana = new VisorRecetas();
-                nuevaVentana.recetaCargada = (Receta)dataGridView1.Rows[indexFila].DataBoundItem;
+                nuevaVentana.recetaCargada = BDD.DevolverReceta((int)dataGridView1[0, indexFila].Value);
 
                 this.Visible = false;
                 nuevaVentana.ShowDialog();
@@ -154,6 +156,36 @@ namespace Front
             {
                 MessageBox.Show("La receta seleccionada no es valida.");
             }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentCell != null)
+            {
+                RecetasAltaModificacion nuevaVentana = new RecetasAltaModificacion();
+                int indexFila = dataGridView1.CurrentCell.RowIndex;
+
+                nuevaVentana.esModificacion = true;
+                nuevaVentana.idReceta = (int)dataGridView1[0, indexFila].Value;
+
+                this.Visible = false;
+                nuevaVentana.ShowDialog();
+                this.Visible = true;
+
+                BDD = null;
+                BDD = new Principal();
+
+                ActualizarDataGridView(BDD.DevolverRecetasUsuario(IdUsuarioLogueado));
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una receta.");
+            }
+        }
+
+        private void btnRestaurar_Click(object sender, EventArgs e)
+        {
+            ActualizarDataGridView(BDD.DevolverRecetasUsuario(IdUsuarioLogueado));
         }
     }
 }

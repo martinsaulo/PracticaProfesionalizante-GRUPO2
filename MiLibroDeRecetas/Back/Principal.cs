@@ -1,4 +1,7 @@
-﻿using System.Security.Cryptography;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using System.Reflection.Metadata.Ecma335;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Back
@@ -79,6 +82,9 @@ namespace Back
             var recetaEncontrada = context.Recetas.Find(Id);
             if (recetaEncontrada != null)
             {
+                context.IngredientesReceta.RemoveRange(context.IngredientesReceta.Where(x => x.RecetaId == Id));
+                context.EtiquetasRecetas.RemoveRange(context.EtiquetasRecetas.Where(x => x.RecetaId == Id));
+                context.Pasos.RemoveRange(context.Pasos.Where(x => x.RecetaId == Id));
                 context.Recetas.Remove(recetaEncontrada);
                 context.SaveChanges();
             }
@@ -92,8 +98,14 @@ namespace Back
             var recetaEncontrada = context.Recetas.Find(RecetaNueva.Id);
             if (recetaEncontrada != null)
             {
-                recetaEncontrada = RecetaNueva;
                 recetaEncontrada.Fecha_Modificacion = DateTime.Now;
+                recetaEncontrada.Titulo = RecetaNueva.Titulo;
+                recetaEncontrada.Descripcion = RecetaNueva.Descripcion;
+                recetaEncontrada.Calorias = RecetaNueva.Calorias;
+                recetaEncontrada.Ingredientes = RecetaNueva.Ingredientes;
+                recetaEncontrada.Pasos = RecetaNueva.Pasos;
+                recetaEncontrada.Etiquetas = RecetaNueva.Etiquetas;
+
                 context.SaveChanges();
             }
             else
@@ -103,28 +115,49 @@ namespace Back
         }
         public List<Receta> FiltrarPorEtiqueta(List<Receta> Recetas, Etiqueta etiqueta)
         {
-            List<Receta> recetasRetornadas = new List<Receta>();
-            foreach (Receta x in Recetas)
-            {
-                if (x.EtiquetaIncluida(etiqueta))
-                {
-                    recetasRetornadas.Add(x);
-                }
-            }
-            return recetasRetornadas;
+            return Recetas.Where(x => x.Etiquetas.Any(x => x.Etiqueta == etiqueta)).ToList();
         }
         public List<Receta> DevolverRecetasUsuario(int idUsuario)
         {
             var usuarioEncontrado = context.Usuarios.Find(idUsuario);
             if (usuarioEncontrado != null)
             {
-                return usuarioEncontrado.Recetas;
+
+                return context.Recetas.
+                    Include(x => x.Etiquetas).
+                    ThenInclude(x => x.Etiqueta).
+                    Where(x => x.UsuarioId == idUsuario).
+                    ToList();
             }
             else
             {
                 throw new NullReferenceException("Usuario no encontrado.");
             }
         } 
+        public Receta DevolverReceta(int idReceta)
+        {
+            var recetaEncontrada = context.Recetas.Find(idReceta);
+            if(recetaEncontrada != null)
+            {
+                recetaEncontrada.Pasos = context.Pasos.Where(x => x.RecetaId == idReceta).ToList();
+
+                recetaEncontrada.Ingredientes = context.IngredientesReceta.
+                    Include(x => x.Ingrediente).
+                    Where(x => x.RecetaId == idReceta).
+                    ToList();
+
+                recetaEncontrada.Etiquetas = context.EtiquetasRecetas.
+                    Include(x => x.Etiqueta).
+                    Where(x => x.RecetaId == idReceta).
+                    ToList();
+
+                return recetaEncontrada;
+            }
+            else
+            {
+                throw new NullReferenceException("Receta no encontrada");
+            }
+        }
         public void AltaEtiqueta (string NombreEtiqueta)
         {
             Etiqueta nuevaEtiqueta = new Etiqueta();

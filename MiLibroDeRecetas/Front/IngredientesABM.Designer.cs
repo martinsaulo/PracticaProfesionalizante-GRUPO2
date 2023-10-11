@@ -101,7 +101,7 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(446, 12);
+            btnAgregar.Location = new Point(445, 147);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(151, 23);
             btnAgregar.TabIndex = 1;
@@ -132,7 +132,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(447, 38);
+            label1.Location = new Point(445, 12);
             label1.Name = "label1";
             label1.Size = new Size(51, 15);
             label1.TabIndex = 4;
@@ -140,7 +140,7 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(447, 56);
+            txtNombre.Location = new Point(446, 30);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(150, 23);
             txtNombre.TabIndex = 5;
@@ -148,7 +148,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(447, 82);
+            label2.Location = new Point(445, 56);
             label2.Name = "label2";
             label2.Size = new Size(49, 15);
             label2.TabIndex = 6;
@@ -158,7 +158,7 @@
             // 
             comboBoxTipos.FormattingEnabled = true;
             comboBoxTipos.Items.AddRange(new object[] { "Unidad", "Gramo", "Mililitro" });
-            comboBoxTipos.Location = new Point(447, 144);
+            comboBoxTipos.Location = new Point(445, 118);
             comboBoxTipos.Name = "comboBoxTipos";
             comboBoxTipos.Size = new Size(150, 23);
             comboBoxTipos.TabIndex = 8;
@@ -166,7 +166,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(446, 126);
+            label3.Location = new Point(445, 100);
             label3.Name = "label3";
             label3.Size = new Size(35, 15);
             label3.TabIndex = 9;
@@ -175,7 +175,7 @@
             // txtCalorias1
             // 
             txtCalorias1.DecimalPlaces = 2;
-            txtCalorias1.Location = new Point(447, 100);
+            txtCalorias1.Location = new Point(445, 74);
             txtCalorias1.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             txtCalorias1.Name = "txtCalorias1";
             txtCalorias1.Size = new Size(150, 23);

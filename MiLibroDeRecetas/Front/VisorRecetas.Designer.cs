@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VisorRecetas));
             btnVolver = new Button();
             lblTitulo = new Label();
             lblCreacion = new Label();
@@ -131,8 +133,17 @@
             // 
             // dataGridViewPasos
             // 
+            dataGridViewPasos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewPasos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewPasos.Columns.AddRange(new DataGridViewColumn[] { Descripcion });
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridViewPasos.DefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewPasos.Location = new Point(221, 56);
             dataGridViewPasos.Name = "dataGridViewPasos";
             dataGridViewPasos.RowTemplate.Height = 25;
@@ -171,6 +182,7 @@
             Controls.Add(lblCreacion);
             Controls.Add(lblTitulo);
             Controls.Add(btnVolver);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "VisorRecetas";
             Text = "Titulo";
             Load += VisorRecetas_Load;
