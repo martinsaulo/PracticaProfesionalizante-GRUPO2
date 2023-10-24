@@ -37,7 +37,7 @@ namespace Front
                     {
                         this.Visible = false;
                         Menu_Principal ventanaMenu = new Menu_Principal();
-                        ventanaMenu.IdUsuarioLoggeado = BDD.DevolverUsuario(txtNombre.Text).Id;
+                        Usuario.Current = BDD.DevolverUsuario(txtNombre.Text).Id;
                         ventanaMenu.ShowDialog();
                         this.Visible = true;
                     }

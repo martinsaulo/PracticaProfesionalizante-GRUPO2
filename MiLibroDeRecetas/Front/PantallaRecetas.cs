@@ -18,7 +18,7 @@ namespace Front
             InitializeComponent();
         }
         Principal BDD = new Principal();
-        public int IdUsuarioLogueado { get; set; }
+        int IdUsuarioLogueado = Usuario.Current;
         private void ActualizarDataGridView(List<Receta> lista)
         {
             dataGridView1.DataSource = null;
@@ -123,7 +123,8 @@ namespace Front
             }
             else
             {
-                ActualizarDataGridView(BDD.FiltrarPorEtiqueta(BDD.DevolverRecetasUsuario(IdUsuarioLogueado), (Etiqueta)comboBoxFiltrar.SelectedItem));
+                ActualizarDataGridView(BDD.FiltrarPorEtiqueta(BDD.DevolverRecetasUsuario(IdUsuarioLogueado), 
+                    (Etiqueta)comboBoxFiltrar.SelectedItem));
             }
         }
 
@@ -133,7 +134,6 @@ namespace Front
 
             this.Visible = false;
             nuevaVentana.esModificacion = false;
-            nuevaVentana.idUsuarioLoggueado = IdUsuarioLogueado;
             nuevaVentana.ShowDialog();
             this.Visible = true;
 

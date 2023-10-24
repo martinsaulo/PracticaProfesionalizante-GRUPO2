@@ -84,7 +84,6 @@ namespace Front
             ingredienteModificado.Tipo = dataGridView1[3, e.RowIndex].Value.ToString();
 
             BDD.ModificacionIngrediente(ingredienteModificado);
-            //Controlar exception con evento DataError
         }
 
         private void btnOrdenar_Click(object sender, EventArgs e)

@@ -18,7 +18,6 @@ namespace Front
             InitializeComponent();
         }
         Principal BDD = new Principal();
-        public int idUsuarioLoggueado { get; set; }
         public bool esModificacion { get; set; }
         public Receta? nuevaReceta { get; set; }
         public int idReceta { get; set; }
@@ -238,7 +237,7 @@ namespace Front
                 }
                 else
                 {
-                    BDD.AltaReceta(nuevaReceta, idUsuarioLoggueado);
+                    BDD.AltaReceta(nuevaReceta, Usuario.Current);
                 }
 
                 this.Close();

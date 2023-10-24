@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Infrastructure.Internal;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,5 +19,6 @@ namespace Back
         public string Nombre { get; set; }
         public string Contrasenia { get; set; }
         public List<Receta> Recetas { get; set; }
+        public static int Current { get; set; }
     }
 }

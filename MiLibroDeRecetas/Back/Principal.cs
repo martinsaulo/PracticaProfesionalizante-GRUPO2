@@ -8,8 +8,8 @@ namespace Back
 {
     public class Principal
     {
-        ApplicationDbContext context = new ApplicationDbContext();
-        
+        ApplicationDbContext context = new ApplicationDbContext();    
+
         private byte[] ConseguirHash(string texto)
         {
             using (HashAlgorithm algorithm = SHA256.Create())
